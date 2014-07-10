@@ -1,0 +1,16 @@
+[
+{
+  "modid": "KittyStuff2",
+  "name": "Kitty Stuff 2",
+  "description": "Kitty Stuff adds many items related to cats.",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["jadedkitty"],
+  "credits": "kg6jay - Help with code, Gamerfreakaz0id - Textures",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
