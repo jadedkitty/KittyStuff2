@@ -3,6 +3,7 @@ package com.jadedkitty.kittyStuff2;
 import com.jadedkitty.kittyStuff2.handler.ConfigurationHandler;
 import com.jadedkitty.kittyStuff2.init.modItems;
 import com.jadedkitty.kittyStuff2.init.modblocks;
+import com.jadedkitty.kittyStuff2.init.recipes;
 import com.jadedkitty.kittyStuff2.item.itemKittyGem;
 import com.jadedkitty.kittyStuff2.proxy.IProxy;
 import com.jadedkitty.kittyStuff2.reference.Reference;
@@ -48,6 +49,7 @@ public class KittyStuff2
     {
         ((CreativeTab) tabTools).setTabIconItem(modItems.kittyGem);
         LogHelper.info("Initialization Complete!");
+        recipes.init();
     }
 
     @Mod.EventHandler
