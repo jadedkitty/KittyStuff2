@@ -22,7 +22,7 @@ group= "com.jadedkitty.KittyStuff2" // http://maven.apache.org/guides/mini/guide
 archivesBaseName = "KittyStuff2"
 
 minecraft {
-    version = "1.7.10-10.13.0.1186"
+    version = "1.7.10-10.13.0.1188"
     assetDir = "eclipse/assets"
 }
 

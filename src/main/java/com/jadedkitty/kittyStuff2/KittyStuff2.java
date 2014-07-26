@@ -1,6 +1,7 @@
 package com.jadedkitty.kittyStuff2;
 
 import com.jadedkitty.kittyStuff2.handler.ConfigurationHandler;
+import com.jadedkitty.kittyStuff2.handler.Drops;
 import com.jadedkitty.kittyStuff2.init.modItems;
 import com.jadedkitty.kittyStuff2.init.modblocks;
 import com.jadedkitty.kittyStuff2.init.recipes;
@@ -15,13 +16,16 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
 @Mod(modid = Reference.MOD_ID, name=Reference.MOD_NAME, version=Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
-public class KittyStuff2
-{
+public class KittyStuff2 {
 
     @Mod.Instance(Reference.MOD_ID)
     public static KittyStuff2 instance;
@@ -30,14 +34,14 @@ public class KittyStuff2
     public static IProxy proxy;
 
 
-    public static CreativeTabs tabTools = new CreativeTab(CreativeTabs.getNextID(),"KittyStuff", Items.diamond,"Kitty Stuff 2");
+    public static CreativeTabs tabTools = new CreativeTab(CreativeTabs.getNextID(), "KittyStuff", Items.diamond, "Kitty Stuff 2");
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
         LogHelper.info("Pre Initialization Complete!");
+        MinecraftForge.EVENT_BUS.register(new Drops());
 
         modItems.init();
 
@@ -45,16 +49,17 @@ public class KittyStuff2
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event)
-    {
+    public void init(FMLInitializationEvent event) {
         ((CreativeTab) tabTools).setTabIconItem(modItems.kittyGem);
         LogHelper.info("Initialization Complete!");
         recipes.init();
     }
 
     @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
+    public void postInit(FMLPostInitializationEvent event) {
         LogHelper.info("Post Initialization Complete!");
     }
+
+
 }
+

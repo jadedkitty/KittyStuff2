@@ -10,24 +10,12 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
 public class itemKittyClaw extends itemKittyStuff2
 {
+
     public itemKittyClaw()
     {
         super();
         this.setUnlocalizedName("kittyClaw");
         this.setTextureName(Reference.MOD_ID + ":kittyClaw");
         this.setCreativeTab(KittyStuff2.tabTools);
-    }
-
-    @SubscribeEvent
-    public void playerKilledOcelot(LivingDropsEvent event){
-        if (event.source.getDamageType().equals("player")){
-            double rand = Math.random();
-            if (event.entityLiving instanceof EntityOcelot){
-                System.out.print(rand);
-                if(rand < 0.10D){
-                    event.entityLiving.dropItem(modItems.kittyClaw, 1);
-                }
-            }
-        }
     }
 }
