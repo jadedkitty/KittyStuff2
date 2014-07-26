@@ -2,7 +2,7 @@
 /.gradle
 /build
 /gradlew
-/build.bat
+/build.bat/build.txt
 
 ## ForgeGradle
 /run
