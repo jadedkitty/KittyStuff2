@@ -12,7 +12,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class modItems
 {
-	public static ToolMaterial gemMaterial = EnumHelper.addToolMaterial("Kitty Gem Material", 10, 0, 10000000000000000000.0F, 0, 1);
+	public static ToolMaterial gemMaterial = EnumHelper.addToolMaterial("Kitty Gem Material", 10, 0, 100000000000.0F, 1000000000, 1);
     public static final itemKittyStuff2 kittyGem = new itemKittyGem();
     public static final Item kittyClaws = new kittyClaws(gemMaterial);
     public static final Item warmMilk = new warmMilk();
