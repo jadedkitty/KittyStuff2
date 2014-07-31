@@ -13,16 +13,27 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class modItems
 {
 	public static ToolMaterial gemMaterial = EnumHelper.addToolMaterial("Kitty Gem Material", 10, 0, 100000000000.0F, 1000000000, 1);
-    public static final itemKittyStuff2 kittyGem = new itemKittyGem();
-    public static final Item kittyClaws = new kittyClaws(gemMaterial);
-    public static final Item warmMilk = new warmMilk();
-    public static final Item kittyClaw = new itemKittyClaw();
+    public static itemKittyStuff2 kittyGem = new itemKittyGem();
+    public static Item kittyClaws = new kittyClaws(gemMaterial);
+    public static Item warmMilk = new warmMilk();
+    public static Item kittyClaw = new itemKittyClaw();
+    public static Item pasteurizedMilk = new pasteurizedMilk();
 
     public static void init()
+    {
+        kittyGem = new itemKittyGem();
+        kittyClaws = new kittyClaws(gemMaterial);
+        warmMilk = new warmMilk();
+        kittyClaw = new itemKittyClaw();
+        pasteurizedMilk = new pasteurizedMilk();
+    }
+    
+    public static void register()
     {
         GameRegistry.registerItem(kittyGem, "kittyGem");
         GameRegistry.registerItem(kittyClaws, "kittyClaws");
         GameRegistry.registerItem(warmMilk, "warmMilk");
         GameRegistry.registerItem(kittyClaw, "itemkittyClaw");
+        GameRegistry.registerItem(pasteurizedMilk, "pasteurizedMilk");
     }
 }

@@ -3,3 +3,6 @@ tile.kittystuff2:kittyblock.name=Kitty Block
 item.kittyClaws.name=Kitty Claws
 item.warmMilk.name=Warm Milk
 item.kittystuff2:kittyClaw.name=Kitty Claw
+tile.PasteurizerIdle.name=Pasteurizer
+tile.PasteurizerActive.name=Pasteurizer
+item.pasteurizedMilk.name=Pasteurized Milk

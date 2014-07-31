@@ -3,7 +3,7 @@
   "modid": "KittyStuff2",
   "name": "Kitty Stuff 2",
   "description": "Kitty Stuff adds many items related to cats.",
-  "version": "1.0",
+  "version": "1.1",
   "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
@@ -14,3 +14,4 @@
   "dependencies": []
 }
 ]
+ 

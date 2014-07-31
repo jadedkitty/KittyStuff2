@@ -1,6 +1,5 @@
 package com.jadedkitty.kittyStuff2.init;
 
-import com.jadedkitty.kittyStuff2.item.warmMilk;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -16,5 +15,6 @@ public class recipes
        GameRegistry.addShapelessRecipe(new ItemStack(modItems.kittyGem), new ItemStack(Items.diamond), new ItemStack(Items.dye, 1, 5));
        GameRegistry.addRecipe(new ItemStack(modblocks.kittyblock), "www", "wbw", "www",'b',new ItemStack(Blocks.diamond_block), 'w',new ItemStack(Blocks.wool, 1, 9));
        GameRegistry.addSmelting(Items.milk_bucket, new ItemStack(modItems.warmMilk), 0);
+       PasteurizerRecipes.smelting().addSmelting(new ItemStack(Items.milk_bucket,1),new ItemStack(modItems.pasteurizedMilk,1),1.0F);
    }
 }

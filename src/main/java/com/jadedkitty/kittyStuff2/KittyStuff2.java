@@ -2,6 +2,7 @@ package com.jadedkitty.kittyStuff2;
 
 import com.jadedkitty.kittyStuff2.handler.ConfigurationHandler;
 import com.jadedkitty.kittyStuff2.handler.Drops;
+import com.jadedkitty.kittyStuff2.handler.GuiHandler;
 import com.jadedkitty.kittyStuff2.init.modItems;
 import com.jadedkitty.kittyStuff2.init.modblocks;
 import com.jadedkitty.kittyStuff2.init.recipes;
@@ -17,6 +18,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.init.Items;
@@ -44,12 +46,17 @@ public class KittyStuff2 {
         MinecraftForge.EVENT_BUS.register(new Drops());
 
         modItems.init();
+        modItems.register();
 
         modblocks.init();
+        modblocks.register();
+        modblocks.registerTileEntities();
+
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         ((CreativeTab) tabTools).setTabIconItem(modItems.kittyGem);
         LogHelper.info("Initialization Complete!");
         recipes.init();
